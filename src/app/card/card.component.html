@@ -1,0 +1,12 @@
+<div *ngIf="data">
+  <div class="card">
+    <div class="title">{{title}}</div>
+    <div class="row" *ngFor = 'let entity of data'>
+      <div *ngFor='let key of dataKeys' class="col-md-2">
+        <div class="key">{{formatKeyHeaders(key) | titlecase}}</div>
+        <div class="values">{{isDate(entity[key], key)|| 'Not Available'}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

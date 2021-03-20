@@ -1,0 +1,9 @@
+<div class="mainContainer h-100">
+  <div class="wrapper">
+    <app-top-nav *ngIf="isUserLoggedIn"></app-top-nav>
+  </div>
+
+  <div class="contentSec h-100">
+    <router-outlet></router-outlet>
+  </div>
+</div>

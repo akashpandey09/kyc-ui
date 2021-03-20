@@ -1,0 +1,58 @@
+apiVersion: skaffold/v1beta5
+kind: Config
+build:
+  artifacts:
+    - image: nuclei-on-prem-csr-ui
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:{{.VERSION}}"
+deploy:
+  kubectl:
+    manifests:
+      - k8s-*
+
+profiles:
+  - name: dev
+    build:
+      tagPolicy:
+        gitCommit: {}
+    deploy:
+      helm:
+        releases:
+          - name: nuclei-on-prem-csr-ui-dev
+            chartPath: Chart/nuclei-on-prem-csr-ui
+            imageStrategy:
+              helm: {}
+            version: "dev"
+            values:
+              image: nuclei-on-prem-csr-ui
+
+  - name: dev-cabs
+    build:
+      tagPolicy:
+        gitCommit: {}
+    deploy:
+      helm:
+        releases:
+          - name: nuclei-on-prem-csr-ui-dev-cabs
+            chartPath: Chart/nuclei-on-prem-csr-ui
+            imageStrategy:
+              helm: {}
+            version: "dev"
+            values:
+              image: nuclei-on-prem-csr-ui
+
+  - name: federal-uat
+    build:
+      tagPolicy:
+        gitCommit: {}
+    deploy:
+      helm:
+        releases:
+          - name: nuclei-on-prem-csr-ui-default
+            chartPath: Chart/nuclei-on-prem-csr-ui
+            imageStrategy:
+              helm: {}
+            version: "dev"
+            values:
+              image: nuclei-on-prem-csr-ui

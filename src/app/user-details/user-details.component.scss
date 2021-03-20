@@ -1,0 +1,46 @@
+.user-details {
+  .card {
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+
+    strong {
+      margin: 20px 0 0 15px;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+
+    .card-body {
+      margin-top: -20px;
+    }
+  }
+
+  .data-header {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: bolder;
+    text-align: left;
+  }
+
+  .data {
+    text-align: left;
+
+    div {
+      color: grey;
+    }
+  }
+
+  .loyalty-summary {
+    cursor: pointer;
+    color: #20a6fc !important;
+  }
+
+  .modal-body {
+    margin-top: -20px;
+  }
+}
+
+.modal-dialog {
+  margin-top: 200px;
+  max-width: 1000px !important;
+}

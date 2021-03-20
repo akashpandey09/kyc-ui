@@ -1,0 +1,16 @@
+.search-dropdown-box {
+  display: table; /* Allow the centering to work */
+  margin: 0 auto;
+}
+
+ul#horizontal-list {
+  min-width: auto;
+  list-style: none;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+ul#horizontal-list li {
+  display: inline;
+  padding-left: 20px;
+}

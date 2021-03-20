@@ -1,0 +1,212 @@
+<div class="user-details" *ngIf="getLastSearchedCustomerDetails()">
+  <div class="card">
+    <strong>User Details</strong>
+    <div class="card-body">
+      <div class="row data-header">
+        <div class="col-md-2">Device ID</div>
+        <div class="col-md-3">Email ID</div>
+        <div class="col-md-3">App Version Code</div>
+        <div class="col-md-2">Login Date & Time</div>
+<!--        <div class="col-md-2">Partner Name</div>-->
+        <div class="col-md-2">Mobile Number</div>
+      </div>
+      <div class="row data" *ngIf="userBasicDetails">
+        <div class="col-md-2">{{userBasicDetails.userDetails.device_id || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.userDetails.email || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.userDetails.app_version_code || 'Not Available'}}</div>
+        <div class="col-md-2">{{(commonService.dateParser(userBasicDetails.userDetails.login_date_time)) || 'Not Available'}}</div>
+        <!--        <div class="col-md-2">{{userBasicDetails.partner_name || 'Not Available'}}</div>-->
+        <div class="col-md-2">{{userBasicDetails.userDetails.mobile || 'Not Available'}}</div>
+      </div>
+      <div class="row data-header">
+        <div class="col-md-2">Login Mode</div>
+        <div class="col-md-3">Customer Name</div>
+        <div class="col-md-3">Created Time</div>
+        <div class="col-md-2">Customer ID</div>
+        <div class="col-md-2">Analytics ID</div>
+      </div>
+      <div class="row data" *ngIf="userBasicDetails">
+        <div class="col-md-2">{{userBasicDetails.userDetails.login_mode || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.userDetails.customer_name || 'Not Available'}}</div>
+        <div class="col-md-3">{{(commonService.dateParser(userBasicDetails.userDetails.created_time)) || 'Not Available'}}</div>
+        <div class="col-md-2">{{userBasicDetails.userDetails.user_uid || 'Not Available'}}</div>
+        <div class="col-md-2">{{userBasicDetails.userDetails.analytics_id || 'Not Available'}}</div>
+      </div>
+      <div class="row data-header">
+        <div class="col-md-2">Customer User Type</div>
+        <div class="col-md-3">Customer City</div>
+        <div class="col-md-3">Customer State</div>
+        <div class="col-md-2">Customer Country</div>
+        <div class="col-md-2">Customer Pin Code</div>
+      </div>
+      <div class="row data" *ngIf="userBasicDetails">
+        <div class="col-md-2">{{userBasicDetails.user_type || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.userDetails.city || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.userDetails.state || 'Not Available'}}</div>
+        <div class="col-md-2">{{userBasicDetails.userDetails.country || 'Not Available'}}</div>
+        <div class="col-md-2">{{userBasicDetails.userDetails.pin || 'Not Available'}}</div>
+      </div>
+      <div class="row data-header" *ngIf="userBasicDetails">
+        <div class="col-md-2">Login Failure Attempt</div>
+        <div class="col-md-3">Customer Quick Limit</div>
+        <div class="col-md-3">Created Default Account Number</div>
+        <div class="col-md-2">Last Password Change Date</div>
+        <div class="col-md-2">Login Failure Date</div>
+      </div>
+      <div class="row data">
+        <div class="col-md-2">{{userBasicDetails.userDetails.login_failure_attempt}}</div>
+        <div class="col-md-3">{{userBasicDetails.userDetails.cust_quick_limit || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.userDetails.default_account_number || 'Not Available'}}</div>
+        <div class="col-md-2">{{(commonService.dateParser(userBasicDetails.userDetails.last_pwd_change_date)) || 'Not Available'}}</div>
+        <div class="col-md-2">{{(commonService.dateParser(userBasicDetails.userDetails.login_failure_date )) || 'Not Available'}}</div>
+      </div>
+      <div class="otherDetails">
+        <div class="row data-header">
+          <div class="col-md-2">Limit Used</div>
+          <div class="col-md-3">National ID</div>
+          <div class="col-md-3">Customer Status</div>
+          <div class="col-md-2">Non Operative</div>
+          <div class="col-md-2">Customer Address</div>
+        </div>
+        <div class="row data">
+          <div class="col-md-2">{{userAccountDetails.CustDetails.limit_used || 'Not Available'}}</div>
+          <div class="col-md-3">{{userAccountDetails.CustDetails.national_id || 'Not Available'}}</div>
+          <div class="col-md-3">{{userAccountDetails.CustDetails.status || 'Not Available'}}</div>
+          <div class="col-md-2">{{userBasicDetails.userDetails.non_operative || 'Not Available'}}</div>
+          <div class="col-md-2">{{userBasicDetails.userDetails.address1}} {{', '}} {{userBasicDetails.userDetails.address2 || 'Not Available'}}</div>
+        </div>
+      </div>
+      <div class="row data-header">
+        <div class="col-md-2">Wallet Status</div>
+        <div class="col-md-3">Wallet Cash</div>
+        <div class="col-md-3">CashBack</div>
+        <div class="col-md-2">Wallet Status Flag</div>
+        <div class="col-md-2">Upi Status</div>
+      </div>
+      <div class="row data">
+        <div class="col-md-2">{{userBasicDetails.walletDetails.walletStatus || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.walletDetails.cash || 'Not Available'}}</div>
+        <div class="col-md-3">{{userBasicDetails.walletDetails.cashback || 'Not Available'}}</div>
+        <div class="col-md-2">{{userBasicDetails.userDetails.wallet_status || 'Not Available'}}</div>
+        <div class="col-md-2">{{userBasicDetails.userDetails.upi_status || 'Not Available'}}</div>
+      </div>
+      <div class="row data-header">
+        <div class="col-md-2">Cheque Book Request Account</div>
+        <div class="col-md-3">Cheque Book Status</div>
+        <div class="col-md-3">Cheque Book Insert Date</div>
+        <div class="col-md-2">Cheque Book Status Description</div>
+        <div class="col-md-2">Cheque Book Leaves Count</div>
+      </div>
+      <div class="row data">
+        <div class="col-md-2">{{userAccountDetails.cheque_book_request.ACCOUNT || 'Not Available'}}</div>
+        <div class="col-md-3">{{userAccountDetails.cheque_book_request.STATUS || 'Not Available'}}</div>
+        <div class="col-md-3">{{(commonService.dateParser(userAccountDetails.cheque_book_request.INSERTDT)) || 'Not Available'}}</div>
+        <div class="col-md-2">{{userAccountDetails.cheque_book_request.STATUSDESC || 'Not Available'}}</div>
+        <div class="col-md-2">{{userAccountDetails.cheque_book_request.NOOFLEAVES || 'Not Available'}}</div>
+      </div>
+      <div class="accounts" *ngIf="userBasicDetails">
+        <div class="row data-header">
+          <div class="col-md-2" (click)="showSubItem('acc')">Account Number</div>
+          <div class="col-md-3" (click)="showSubItem('acc')">Category</div>
+          <div class="col-md-3" (click)="showSubItem('acc')">IFSC</div>
+        </div>
+        <div class="row data" *ngIf="accVisibleIndex === 0"><div class="col-md-2" (click)="showSubItem('acc')">click to get account details...</div></div>
+        <span *ngFor="let i of userBasicDetails.accounts">
+          <div class="row data" *ngIf="accVisibleIndex === 1">
+            <div class="col-md-2">{{i.ACCOUNTNUMBER || 'Not Available'}}</div>
+            <div class="col-md-3">{{i.CATEGORY || 'Not Available'}}</div>
+            <div class="col-md-3">{{i.IFSC || 'Not Available'}}</div>
+            </div>
+        </span>
+      </div>
+      <div class="row data-header" (click)="showSubItem('vid')">
+        <div class="col-md-2">Virtual ID</div>
+      </div>
+      <div class="row data" *ngIf="vidVisibleIndex === 0"><div class="col-md-2" (click)="showSubItem('vid')">click to get virtual ids...</div></div>
+      <div class="vpas" *ngFor="let i of userBasicDetails.VPAs">
+        <div class="row data" *ngIf="i && vidVisibleIndex === 1">
+          <div class="col-md-2">{{i.VIRTUAL_ID || 'Not Available'}}</div>
+        </div>
+      </div>
+      <div class="cards" *ngIf="userAccountDetails">
+        <div class="row data-header">
+          <div class="col-md-2" (click)="showSubItem('card')">Card Number</div>
+          <div class="col-md-3" (click)="showSubItem('card')">Card Type</div>
+          <div class="col-md-3" (click)="showSubItem('card')">Card Description</div>
+          <div class="col-md-2" (click)="showSubItem('card')">Card Status</div>
+        </div>
+        <div class="row data" *ngIf="cardVisibleIndex === 0"><div class="col-md-2" (click)="showSubItem('card')">click to get card details...</div></div>
+        <span *ngFor="let i of userAccountDetails.cards">
+          <div class="row data" *ngIf="i && cardVisibleIndex === 1">
+            <div class="col-md-2">{{i.CARD_NUMBER || 'Not Available'}}</div>
+            <div class="col-md-3">{{i.CARD_TYPE || 'Not Available'}}</div>
+            <div class="col-md-3">{{i.DESCRIPTION || 'Not Available'}}</div>
+            <div class="col-md-2">{{i.CARD_STATUS || 'Not Available'}}</div>
+            </div>
+        </span>
+      </div>
+      <div class="gh">
+        <div class="row data-header">
+          <div class="col-md-2" (click)="showSubItem('gh')">15GH Request Type</div>
+          <div class="col-md-3" (click)="showSubItem('gh')">15GH Insert Date</div>
+          <div class="col-md-3" (click)="showSubItem('gh')">15GH Form Type</div>
+        </div>
+        <div class="row data" *ngIf="ghVisibleIndex === 0"><div class="col-md-2" (click)="showSubItem('gh')">click to get 15 gh details...</div></div>
+        <span *ngFor="let i of userAccountDetails.GH15">
+          <div class="row data" *ngIf="i && ghVisibleIndex === 1">
+            <div class="col-md-2">{{i.REQTYPE || 'Not Available'}}</div>
+            <div class="col-md-3">{{i.INSERTDT || 'Not Available'}}</div>
+            <div class="col-md-3">{{i.FORMTYPE || 'Not Available'}}</div>
+            </div>
+        </span>
+      </div>
+<!--      <div class="row data-header">-->
+<!--        <div class="col-md-2">Is Referred User</div>-->
+<!--        <div class="col-md-3">Is Rooted Device</div>-->
+<!--        <div class="col-md-3">Multiple Partners</div>-->
+<!--      </div>-->
+
+<!--      <div class="row data">-->
+<!--        <div class="col-md-2">{{userBasicDetails.is_referred_user || 'Not Available'}}</div>-->
+<!--        <div class="col-md-3">{{userBasicDetails.is_rooted_device || 'Not Available'}}</div>-->
+<!--        <div class="col-md-3">{{userBasicDetails.multiple_partners || 'Not Available'}}</div>-->
+<!--        <div class="col-md-2"></div>-->
+<!--        <div class="col-md-2 loyalty-summary" (click)="displayLoyaltySummary()">View Loyalty Summary</div>-->
+<!--      </div>-->
+    </div>
+  </div>
+</div>
+<!--<div class="user-details" *ngIf="showLoyaltySummary">-->
+<!--  <div class="card">-->
+<!--    <strong>Loyalty Summary</strong>-->
+<!--    <div class="card-body">-->
+<!--      <div class="row data-header">-->
+<!--        <div class="col-md-2">Total Points</div>-->
+<!--        <div class="col-md-3">Last Credit Date</div>-->
+<!--        <div class="col-md-3">Last Usage Date</div>-->
+<!--        <div class="col-md-2">User Type</div>-->
+<!--        <div class="col-md-2">Pending Points</div>-->
+<!--      </div>-->
+<!--      <div class="row data">-->
+<!--        <div class="col-md-2">{{userLoyaltySummary.total_points || 'Not Available'}}</div>-->
+<!--        <div-->
+<!--          class="col-md-3">{{(userLoyaltySummary.last_credit_date | date:'d MMM y-h:mm a') || 'Not Available'}}</div>-->
+<!--        <div-->
+<!--          class="col-md-3">{{(userLoyaltySummary.last_usage_date  | date:'d MMM y-h:mm a') || 'Not Available' }}</div>-->
+<!--        <div class="col-md-2">{{userLoyaltySummary.user_type || 'Not Available'}}</div>-->
+<!--        <div class="col-md-2">{{userLoyaltySummary.pending_points || 'Not Available'}}</div>-->
+<!--      </div>-->
+<!--      <div class="row data-header">-->
+<!--      </div>-->
+<!--      <div class="row data">-->
+<!--        <div class="col-md-2"></div>-->
+<!--        <div class="col-md-3"></div>-->
+<!--        <div class="col-md-3"></div>-->
+<!--        <div class="col-md-2"></div>-->
+<!--        <div class="col-md-2 loyalty-summary" (click)="displayUserDetails()">View User Details</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row data-header">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

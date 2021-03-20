@@ -1,0 +1,312 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+html, body {
+  height: 100%;
+}
+
+/***************************Confirmation Popup Style***************************/
+.modal .modal-title {
+  font-weight: bold;
+}
+
+.modal .modal-body, .modal .modal-footer button {
+  font-size: 14px;
+}
+
+.modal .modal-body p {
+  margin-bottom: 0;
+}
+
+/******************************Date range picker style********************************/
+.bs-datepicker {
+  height: auto;
+}
+
+.custom-content {
+  position: absolute;
+  z-index: 99999;
+  cursor: pointer;
+  align-self: center;
+}
+
+.custom-content button {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.bs-datepicker {
+  z-index: 9999;
+}
+
+.bs-datepicker .bs-datepicker-container {
+  padding: 15px 0;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-head {
+  background-color: #ffffff;
+  min-width: 0;
+  padding: 10px 0;
+  margin-top: 35px;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-head button.current {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-body {
+  min-width: 0 !important;
+  padding: 0;
+  border: none;
+  font-family: 'Lato', sans-serif;
+}
+
+.bs-datepicker-multiple + .bs-datepicker-multiple {
+  margin-left: 0 !important;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-body table th {
+  font-size: 12.1px;
+  font-weight: normal;
+  color: #333333;
+}
+
+.bs-datepicker-body table td:before, .bs-datepicker-body table td span:before {
+  left: 0px !important;
+  right: 0px !important;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-body .select-start.selected {
+  background-color: #de5245;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-body .select-end.selected {
+  background-color: #20a6fc;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-body .in-range::before {
+  background-color: #e9f6fe !important;
+}
+
+.bs-datepicker .bs-calendar-container .bs-datepicker-body table td span {
+  font-size: 11px;
+}
+
+/**********************************Tag Input Styles************************************/
+tag-input .ng2-tag-input {
+  height: auto !important;
+  border-radius: 2px !important;
+  border: solid 1px #e9eff4 !important;
+  box-shadow: none !important;
+  line-height: 0 !important;
+}
+
+tag-input .ng2-tag-input .ng2-tags-container {
+  line-height: 0 !important;
+}
+
+tag-input .ng2-tag-input .ng2-tags-container tag, tag-input .ng2-tag-input .ng2-tags-container tag:hover {
+  font-size: 10px !important;
+  height: 16px !important;
+  line-height: 10px !important;
+  background: #f5f5f5 !important;
+  border-radius: 1px !important;
+  border: solid 1px #e0e0e0 !important;
+}
+
+tag-input .ng2-tag-input .ng2-tags-container .ng2-tag-input__text-input {
+  font-size: 10px !important;
+  height: 16px !important;
+}
+
+tag-input .ng2-tag-input tag delete-icon {
+  width: 10px !important;
+}
+
+tag-input .ng2-tag-input tag delete-icon svg {
+  width: 6px !important;
+  color: #97a4b1 !important;
+  height: 12px !important;
+}
+
+tag-input .ng2-tag-input tag delete-icon svg path {
+  fill: #97a4b1 !important;
+}
+
+/**************************Multi-Select Filter Styles************************************/
+.multiselect-dropdown .dropdown-list li {
+  line-height: 1rem;
+}
+
+.multiselect-dropdown .btn {
+  border-radius: 2px !important;
+  border: solid 1px #e9eff4 !important;
+  font-size: 12px;
+}
+
+.dropdown-list .filter-textbox input {
+  padding: 0 !important;
+}
+
+.multiselect-item-checkbox input[type=checkbox]:checked + div:before {
+  border-color: #20a6fc !important;
+  background-color: #20a6fc !important;
+}
+
+.multiselect-item-checkbox input[type=checkbox] + div:before {
+  border-radius: 2px !important;
+  border: #e9eff4 solid 1px !important;
+}
+
+.multiselect-item-checkbox input[type=checkbox] + div:after {
+  top: 45% !important;
+  left: 3px !important;
+}
+
+.multiselect-dropdown .btn .selected-item {
+  border: 1px solid #20a6fc !important;
+  background: #20a6fc !important;
+}
+
+/**************************Toaster Component styles************************************/
+.toast-title {
+  font-weight: bold;
+  padding: 10px 15px;
+  color: #ffffff;
+  background-color: #28313b;
+  font-size: 12px;
+}
+
+.toast-title::after {
+  content: url('./assets/upload_close.svg');
+  float: right;
+}
+
+.toast-message {
+  word-wrap: break-word;
+  font-size: 12px;
+}
+
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+
+#toast-container {
+  pointer-events: none;
+  position: fixed;
+  z-index: 999999;
+}
+
+#toast-container * {
+  box-sizing: border-box;
+}
+
+#toast-container .toast {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 6px;
+  width: 300px;
+  border-radius: 2px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 12px #999999;
+  color: #FFFFFF;
+  border: solid 1px #97a4b1;
+}
+
+#toast-container .toast:hover {
+  box-shadow: 0 0 12px #000000;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#toast-container.toast-top-center .toast,
+#toast-container.toast-bottom-center .toast {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#toast-container.toast-top-full-width .toast,
+#toast-container.toast-bottom-full-width .toast {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toast {
+  background-color: #ffffff !important;
+  pointer-events: auto;
+}
+
+.toast .progress {
+  height: 3px;
+  padding: 10px 15px;
+}
+
+.toast .progress {
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.toast .toast-message .uplSuccess, .toast .toast-message .uplFailure {
+  padding: 10px 15px;
+  border-bottom: solid 1px #e9eff4;
+}
+
+.toast .toast-message .uplSuccess::after {
+  content: url('./assets/upload_success.svg');
+  float: right;
+}
+
+.toast .toast-message .uplFailure::after {
+  content: url('./assets/upload_failure.svg');
+  float: right;
+}
+
+.toast .toast-msg {
+  padding: 10px 15px;
+}
+
+.toast .toast-message .failReason {
+  padding: 10px 15px;
+  opacity: 0.5;
+  color: #28313b;
+}
+
+.toast .progress {
+  margin: 0 10px 15px;
+  padding: 0 !important;
+}
+
+.toast .progress .progress-bar.indeterminate {
+  position: relative;
+  animation: progress-indeterminate 3s linear infinite;
+  background-color: #20a6fc;
+  height: 3px;
+}
+
+@keyframes progress-indeterminate {
+  from {
+    left: -25%;
+    width: 25%;
+  }
+  to {
+    left: 100%;
+    width: 25%;
+  }
+}
+

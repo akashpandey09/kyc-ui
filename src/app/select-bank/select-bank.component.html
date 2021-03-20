@@ -1,0 +1,14 @@
+<ul class="nav">
+  <li class="search-dropdown" dropdown>
+    <div ngbDropdown class="d-inline-block">
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle"
+              aria-controls="dropdown-basic"><span>{{selectedSearchKey}}</span></button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" aria-labelledby="button-basic">
+        <li *ngFor="let param of searchParams">
+                <span class="dropdown-item" (click)="searchResults(param)">
+                  {{param}}
+                </span>
+        </li>
+      </ul>
+    </div>
+  </li>

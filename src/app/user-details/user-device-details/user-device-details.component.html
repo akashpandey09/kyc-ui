@@ -1,0 +1,6 @@
+<div class = "header" *ngIf="userDetails"> Device Details </div>
+<div class="card">
+  <ng-table *ngIf='rowData' [config]="config" (tableChanged)="onChangeTable(config)" (cellClicked)="selectedRow($event)"
+            [rows]="rowData" [columns]="columns">
+  </ng-table>
+</div>

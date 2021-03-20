@@ -1,0 +1,230 @@
+.container-fluid {
+  background: #f9f9fa;
+  padding: 20px;
+  width: 100%;
+}
+
+.nav-tabs {
+  border: none !important;
+  margin-top: -10px !important;
+}
+
+.table thead th {
+  font-size: 12px;
+}
+
+strong {
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.search-results {
+  .nav-link.active {
+    background-color: inherit !important;
+
+    span {
+      color: #20a6fc !important;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom-style: solid;
+    }
+  }
+
+  .nav-link {
+    cursor: pointer;
+    margin: 20px -5px 20px -10px;
+
+    span {
+      font-size: 10px;
+      font-weight: bold;
+      color: grey;
+      font-family: Verdana, sans-serif;
+    }
+
+    border: none !important;
+  }
+}
+
+.download {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.download-icon {
+  margin-left: 97%;
+  padding: 0 0 20px 6px;
+  margin-top: 20px;
+  margin-bottom: -60px;
+  color: lightgrey;
+  border-style: solid;
+  border-color: #20a6fc;
+  border-radius: 100%;
+  border-width: 2px;
+  height: 30px;
+  width: 30px;
+
+  img {
+    cursor: pointer;
+    width: 12px;
+    filter: opacity(30%);
+  }
+}
+.search {
+  margin-left: 75%;
+  display: inline-block;
+  margin-top: -22px;
+  .btn-secondary {
+    color: #fff;
+    background-color: #20a6fc;
+    border-color: #20a6fc;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.170rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    width:40px;
+    padding:2px;
+  }
+  img {
+    height: 21px;
+  }
+}
+
+.filter-box{
+  margin: -22px -10px 0 10px;
+  background: #fff;
+  z-index: 9;
+  :hover {
+    cursor: pointer;
+  }
+  span {
+    font-size: 12px;
+    margin-left: 6px;
+  }
+}
+.search-filter{
+  display: flex;
+    justify-content: flex-end;
+    padding: 0 15px 0 15px;
+    position: relative;
+    top: 44px;
+}
+.filter-image {
+  width: 16px;
+  margin: 0px 6px 0px 0px;
+}
+.filter-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 33px;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-appearance:none;
+}
+
+.search-input {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 200px;
+  z-index: 999;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.2em + 0.75rem + 2px);
+  padding: 0.275rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/************************************ data table css styles*****************************************/
+
+.table-bordered {
+  border: none !important;
+}
+
+.header {
+  margin-bottom: 20px;
+  font-weight: bolder;
+  font-family: sans-serif;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: inherit !important;
+}
+
+.column-header {
+  width: 150px;
+}
+
+.table-striped tbody tr:hover {
+  background-color: lightgray !important;
+
+  td {
+    color: black !important;
+    cursor: pointer;
+  }
+}
+
+table.dataTable th,
+table.dataTable td {
+  border: none !important;
+}
+
+table.dataTable td {
+  font-size: 12px;
+  color: grey;
+}
+
+.pagination {
+  width: 150px;
+  margin: 20px auto 10px auto;
+
+  h6 {
+    float: right;
+    margin: 7px 7px;
+  }
+}
+
+.pagination a {
+  background-color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: black;
+  float: right;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.column-transaction_id {
+  width: 50px;
+}
+
+/***************************************************************************************************/
+
+@media (min-width:1325px) {
+  .container-fluid {
+    width: 92%;
+  }
+}

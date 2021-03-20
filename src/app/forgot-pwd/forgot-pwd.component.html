@@ -1,0 +1,45 @@
+<div class="container-fluid h-100 bg-dark">
+  <div class="row h-75 align-items-center">
+    <div class="col-xl-3 col-lg-5 col-md-7 col-sm-9 mx-auto">
+      <div class="card  my-5">
+        <div class="col-12 p-4">
+          <div class="card-body">
+            <form [formGroup]="forgotPwdForm" (ngSubmit)="forgotPwdFormSubmit()" novalidate *ngIf="!showSuccessLink">
+              <img class="mx-auto d-block" src="../../assets/federal-bank-india-logo.png" width="174px" height="52px">
+              <h4 class="mb-0 pb-4 pt-4">Forgot your password? </h4>
+              <p class="pb-3 mb-0">We'll email you instructions on how to reset it.</p>
+              <div class="form-group pb-3">
+                <label for="emailFld" class="text-secondary">Email</label>
+                <input type="email" class="form-control" formControlName="emailFld"
+                       [ngClass]="{ 'is-invalid': submitted && f.emailFld.errors }" placeholder="Enter email id">
+                <div *ngIf="submitted && f.emailFld.errors" class="invalid-feedback">
+                  <div *ngIf="f.emailFld.errors.required">Email is required</div>
+                  <div *ngIf="f.emailFld.errors.email && !f.emailFld.errors.required">Email id is invalid</div>
+                </div>
+              </div>
+              <button type="submit" [disabled]="loading" class="btn btn-primary btn-block">Reset Password</button>
+              <img *ngIf="loading" class="pl-3 processingBtn"
+                   src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+            </form>
+            <div class="text-center" *ngIf="showSuccessLink">
+              <div class="">
+                <img src="../assets/group-3.svg">
+              </div>
+              <h5 class="mb-0 p-2">Password reset link sent!</h5>
+              <p class="mb-0 p-3">We've just emailed you instructions on how to
+                reset your password.</p>
+              <button type="button" class="btn btn-primary btn-block" routerLink="/login">Sign In</button>
+            </div>
+            <div class="pt-2" *ngFor="let alert of alerts">
+              <alert [type]="alert.type" [dismissible]="true" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto text-center text-white">
+        <p>For any queries write us at <u>clientcare@gonuclei.in</u></p>
+        <!--      <p>Follow us at </p>-->
+      </div>
+    </div>
+  </div>
+</div>

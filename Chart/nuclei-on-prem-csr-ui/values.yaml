@@ -1,0 +1,68 @@
+replicaCount: 1
+version: v1
+name:
+envName:
+
+CommonConfigMap: common-config
+
+appSecret:
+  enabled: false
+
+appConfigMap:
+  enabled: false
+
+protoServiceName:
+
+image:
+  repository: mycluster.icp:8500/default/nuclei-on-prem-csr-ui
+  tag: 0.0.8
+  pullPolicy: Always
+
+service:
+  name:
+  internalPort:
+  version: v1
+
+rest:
+  enabled: true
+  name:
+  port:
+    targetPort:
+  matchprefix:
+  matchrewrite:
+
+grpc:
+  enabled: false
+
+ingress:
+  enabled: true
+  gateway:
+  api: "networking.istio.io/v1alpha3"
+  hostname:
+
+resources:
+  enabled: false
+  limits:
+    cpu: 1000m
+    memory: 600Mi
+  requests:
+    cpu: 400m
+    memory: 300Mi
+
+probePath:
+
+vault:
+  enabled: false
+
+livenessProbe:
+  initialDelaySeconds: 120
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
+readinessProbe:
+  initialDelaySeconds: 120
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
+terminationGracePeriodSeconds: 2.0
+

@@ -1,0 +1,20 @@
+<div *ngIf = "userLoyaltySummary">
+    <div class = "card">
+      <div class = "card-body">
+        <div class = "row header">
+          <div class = "col-md-2" >Total Points:</div>
+          <div class = "col-md-3" >Last Credit Date:</div>
+          <div class = "col-md-3" >Last Usage Date:</div>
+          <div class = "col-md-2" >User Type:</div>
+          <div class = "col-md-2" >Pending Points:</div>
+        </div>
+        <div class = "row data">
+          <div class = "col-md-2" >{{userLoyaltySummary.total_points || 'Not Available'}}</div>
+          <div class = "col-md-3" >{{(userLoyaltySummary.last_credit_date | date:'d MMM y-h:mm a') || 'Not Available'}}</div>
+          <div class = "col-md-3" >{{(userLoyaltySummary.last_usage_date  | date:'d MMM y-h:mm a' )|| 'Not Available' }}</div>
+          <div class = "col-md-2" >{{userLoyaltySummary.user_type || 'Not Available'}}</div> 
+          <div class = "col-md-2" >{{userLoyaltySummary.pending_points || 'Not Available'}}</div>
+        </div>
+      </div>
+    </div>
+</div>

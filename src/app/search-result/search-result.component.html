@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <app-user-details *ngIf="userBasicDetails && userAccountDetails && (userBasicDetails | json) != '{}' && (userAccountDetails | json) != '{}'"
+                    [userBasicDetails]="userBasicDetails" [userAccountDetails]="userAccountDetails"></app-user-details>
+<!--  <app-user-device-details *ngIf="userDetails"-->
+<!--                           (selectedUser)='selectedUser($event)'-->
+<!--                           (pageNumberChange)='updateUserDetailsPage($event)'-->
+<!--                           [userDetails]="userDetails">-->
+<!--  </app-user-device-details>-->
+  <div *ngIf="(transactionHistory && (transactionHistory | json) != '[]')"
+       class="download-icon" (click)="openDownloadModal()">
+    <img src="../../csr/assets/iconfinder_file-download_326639.svg" alt="download">
+  </div>
+  <div>
+    <tabset class = "search-results">
+      <tab heading="TRANSACTION HISTORY" id="tab1" *ngIf="transactionHistory">
+        <app-transaction-history [transactionHistory]="transactionHistory"
+          (pageNumberChange)='updateTransactionHistoryPage($event)'>
+        </app-transaction-history>
+      </tab>
+<!--      <tab heading="WALLET TRANSACTION HISTORY" *ngIf="loyaltyDetails && (loyaltyDetails | json) != '[]'" >-->
+<!--        <app-loyalty-details [loyaltyDetails]="loyaltyDetails"-->
+<!--          (pageNumberChange)='updateLoyaltyDetailsPage($event)'>-->
+<!--        </app-loyalty-details>-->
+<!--      </tab>-->
+    </tabset>
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+  <p style="color: white">Please Wait. </p>
+</ngx-spinner>

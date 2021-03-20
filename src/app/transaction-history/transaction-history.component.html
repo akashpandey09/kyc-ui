@@ -1,0 +1,17 @@
+<div class="pagination">
+  <a class="d-inline-block" (click)="updatePage(-1)">&laquo;</a>
+  <h6 class="d-inline-block">{{pageNumber}}</h6>
+  <a class="d-inline-block" *ngIf="rows_on_page.has(pageNumber) && rows_on_page.get(pageNumber) > 0" (click)="updatePage(1)">&raquo;</a>
+</div>
+<div class="card" style="overflow-x:auto;">
+  <ng-table *ngIf='rowData' [config]="config" (tableChanged)="onChangeTable(config)" (cellClicked)="selectedRow($event)"
+    [rows]="rowData" [columns]="columns" align="right">
+  </ng-table>
+
+</div>
+
+<div class="pagination">
+  <a class="d-inline-block" (click)="updatePage(-1)">&laquo;</a>
+  <h6 class="d-inline-block">{{pageNumber}}</h6>
+  <a class="d-inline-block" *ngIf="rows_on_page.has(pageNumber) && rows_on_page.get(pageNumber) > 0" (click)="updatePage(1)">&raquo;</a>
+</div>

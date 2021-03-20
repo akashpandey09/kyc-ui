@@ -1,0 +1,29 @@
+<div class="container-fluid order-container">
+  <app-user-details *ngIf="getLastSearchedCustomerDetails()"
+                    [userBasicDetails]="getLastSearchedCustomerDetails()"
+                    [userAccountDetails]="getLastSearchedCustomerAccountDetails()"
+                    [showLoyaltySummary]='false'>
+  </app-user-details>
+  <br/>
+  <div class="card">
+  <div *ngIf="orderInfoDetails">
+    <tabset class="search-results">
+      <ng-container *ngFor="let item of orderInfoDetails | keyvalue">
+        <tab heading="{{formatKeyHeaders(item.key)}}"
+             style="border: none"
+             *ngIf="!item.key.startsWith('internalStatus') && (item.value | json) != '[]' && (item.value | json) != 'null'">
+          <div class="card-body">
+          <div *ngFor="let val of item.value | keyvalue">
+            <strong>{{formatKeyHeaders(val.key) | titlecase}} </strong>  :    {{val.value}}
+            <br/>
+          </div>
+          </div>
+        </tab>
+      </ng-container>
+    </tabset>
+  </div>
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+  <p style="color: white">Please Wait. </p>
+</ngx-spinner>

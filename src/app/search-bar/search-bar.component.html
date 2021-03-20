@@ -1,0 +1,36 @@
+
+
+<div class="card customUsersCard">
+   <div class="card-header">
+      <div class="row">
+         <div class="search-dropdown-box">
+            <ul id="horizontal-list">
+               <li class="search-box">
+                  <div class="input-group">
+                     <input [(ngModel)]="searchValue" type= {{dataType}} class="form-control" (keyup.enter)="onKeydown($event)">
+                     <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" (click) = "storeSearchResultsAndRoute()" >
+                           <img src="../../csr/assets/icon_search.svg" class="search-image">
+                           <!-- routerLink="/user" -->
+                        </button>
+                     </div>
+                  </div>
+               </li>
+               <li class="search-dropdown" dropdown>
+                  <div class="btn-group" dropdown>
+                     <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle"
+                        aria-controls="dropdown-basic"><span>{{selectedSearchKey}}</span></button>
+                     <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" aria-labelledby="button-basic">
+                        <li *ngFor="let param of searchParams">
+                           <span class="dropdown-item" (click)="searchResults(param)">
+                           {{param}}
+                           </span>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
